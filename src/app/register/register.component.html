@@ -1,0 +1,67 @@
+<div class="h-screen md:flex">
+    <div class="flex md:w-1/2 justify-center py-10 items-center bg-white">
+        <form class="bg-white">
+            <h1 class="text-gray-800 font-bold text-2xl mb-1">Register Now !</h1>
+            <br>
+            <div class="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20"
+                    fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                        clip-rule="evenodd" />
+                </svg>
+                <input class="pl-2 outline-none border-none" type="text" name="" id="" placeholder="First Name" />
+            </div>
+            <div class="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20"
+                    fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                        clip-rule="evenodd" />
+                </svg>
+                <input class="pl-2 outline-none border-none" type="text" name="" id="" placeholder="Last Name" />
+            </div>
+            <div class="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+                </svg>
+                <input class="pl-2 outline-none border-none" type="text" name="" id="" placeholder="Email Address" />
+            </div>
+            <div class="flex items-center border-2 py-2 px-3 rounded-2xl">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20"
+                    fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                        clip-rule="evenodd" />
+                </svg>
+                <input class="pl-2 outline-none border-none" type="text" name="" id="" placeholder="Password" />
+            </div>
+            <label for="large" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">Large select</label>
+<select id="large" class="block w-full px-4 py-3 text-base text-gray-900 border border-gray-100 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-white dark:border-gray-300 dark:placeholder-gray-400 dark:text-gray-700 dark:focus:ring-blue-500 dark:focus:border-blue-500">
+  <option selected>Choose a Role</option>
+  <option value="admin">admin</option>
+  <option value="student">student</option>
+  <option value="teacher">teacher</option>
+</select>
+            <button type="submit"
+                class="block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2">
+                <p>Register</p>
+            </button>
+            <a routerLink="/login">
+                <p>Already have an account ? login now</p>
+            </a>
+        </form>
+
+    </div>
+    <div
+        class="relative overflow-hidden md:flex w-1/2 bg-gradient-to-tr from-blue-800 to-purple-700 i justify-around items-center hidden t2">
+        <div>
+            <img src="../../assets/sign up.png" alt="" routerLink="">
+        </div>
+
+        <div class="absolute -bottom-32 -left-40 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
+        <div class="absolute -bottom-40 -left-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
+        <div class="absolute -top-40 -right-0 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
+        <div class="absolute -top-20 -right-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
+    </div>
+</div>

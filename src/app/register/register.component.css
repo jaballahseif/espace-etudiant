@@ -1,0 +1,21 @@
+img{
+    background-blend-mode:multiply;
+    
+}
+.t2{
+    background: linear-gradient(-60deg, #1E429F, rgba(0, 41, 122, 5) 100%);
+}
+h1,p{
+    text-align: center;
+    font-family: 'Dungeon';
+}
+a:hover{
+    cursor: pointer;
+    color: #1E429F;
+  
+    
+}
+img:hover{
+    cursor: pointer;
+
+}
