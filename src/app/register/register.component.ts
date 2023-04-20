@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { first } from 'rxjs/operators';
 
+
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -15,7 +17,7 @@ export class RegisterComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
   ) {
     this.registerForm = this.formBuilder.group({
       fname: ['', [Validators.required, Validators.minLength(1)]],
@@ -26,6 +28,7 @@ export class RegisterComponent implements OnInit {
     });
     
   }
+
 
   onRegister() {
     if (this.registerForm.valid) {
@@ -42,10 +45,10 @@ export class RegisterComponent implements OnInit {
             if (response.message === 'success') {
               alert(response.message);
               // Registration successful, redirect to home page
-              this.router.navigate(['/login']);
             } else {
               // User already registered, redirect to login page
               alert(response.message);
+              this.router.navigate(['/login']);
             }
           },
           error => console.error(error)

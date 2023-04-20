@@ -17,7 +17,6 @@ import { SidebarAdminComponent } from './sidebar-admin/sidebar-admin.component';
 import { TeamSectionComponent } from './team-section/team-section.component';
 import { HttpClientModule } from '@angular/common/http';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,9 +39,13 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule 
+    HttpClientModule ,
+
+ 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
+  
 })
 export class AppModule { }
