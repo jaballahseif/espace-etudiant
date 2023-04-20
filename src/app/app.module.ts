@@ -16,6 +16,7 @@ import { TeacherComponent } from './teacher/teacher.component';
 import { SidebarAdminComponent } from './sidebar-admin/sidebar-admin.component';
 import { TeamSectionComponent } from './team-section/team-section.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
     TeacherComponent,
     SidebarAdminComponent,
     TeamSectionComponent,
+    ContactComponent,
     
   ],
   imports: [

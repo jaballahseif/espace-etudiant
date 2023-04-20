@@ -7,6 +7,7 @@ import { AdminComponent } from './admin/admin.component';
 import { StudentComponent } from './student/student.component';
 import { TeacherComponent } from './teacher/teacher.component';
 import { AuthGuard } from './auth.guard';
+import { ContactComponent } from './contact/contact.component';
 const routes: Routes = [
   { path: '', component: HomeComponent }, 
   { path: 'login', component: LoginComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard], data: { roles: ['admin'] } },
   { path: 'student', component: StudentComponent, canActivate: [AuthGuard], data: { roles: ['etudiant'] } },
   { path: 'teacher', component: TeacherComponent, canActivate: [AuthGuard], data: { roles: ['enseignant'] } },
+  { path: 'contact', component: ContactComponent },
 ];
 
 @NgModule({
