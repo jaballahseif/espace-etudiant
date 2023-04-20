@@ -17,6 +17,7 @@ import { SidebarAdminComponent } from './sidebar-admin/sidebar-admin.component';
 import { TeamSectionComponent } from './team-section/team-section.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ContactComponent } from './contact/contact.component';
+import { UserlistComponent } from './admin/userlist/userlist.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ContactComponent } from './contact/contact.component';
     SidebarAdminComponent,
     TeamSectionComponent,
     ContactComponent,
+    UserlistComponent,
     
   ],
   imports: [

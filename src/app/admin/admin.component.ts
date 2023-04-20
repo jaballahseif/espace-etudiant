@@ -7,12 +7,13 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
+  selectedMenuItem: string = 'dashboard';
+
 
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
   }
-
 
   logout(): void {
     this.authService.logout();

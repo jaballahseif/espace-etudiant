@@ -8,11 +8,18 @@ import { StudentComponent } from './student/student.component';
 import { TeacherComponent } from './teacher/teacher.component';
 import { AuthGuard } from './auth.guard';
 import { ContactComponent } from './contact/contact.component';
+import { UserlistComponent } from './admin/userlist/userlist.component';
 const routes: Routes = [
   { path: '', component: HomeComponent }, 
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard], data: { roles: ['admin'] } },
+  {
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [AuthGuard],
+    data: { roles: ['admin'] },
+    children: [{ path: 'userlist', component: UserlistComponent }]
+  },
   { path: 'student', component: StudentComponent, canActivate: [AuthGuard], data: { roles: ['etudiant'] } },
   { path: 'teacher', component: TeacherComponent, canActivate: [AuthGuard], data: { roles: ['enseignant'] } },
   { path: 'contact', component: ContactComponent },
