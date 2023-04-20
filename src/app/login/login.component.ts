@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -47,11 +48,22 @@ export class LoginComponent implements OnInit {
                       }, 500);
                   }
               }
+              if(user.message == 'success'){
+                
+              }else{
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'Wrong Credantials!',
+                });
+              }
           },
           error => {
               this.errorMessage = error.message;
+              
           }
       );
+      
   }
 }
 
