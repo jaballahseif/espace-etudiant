@@ -2,3 +2,6 @@
     background: linear-gradient(-60deg, #1a367e, rgba(0, 41, 122, 5) 100%);
 
 }
+a:hover{
+    cursor: pointer;
+}

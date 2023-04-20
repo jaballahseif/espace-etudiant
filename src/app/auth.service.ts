@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User } from './user';
 import { Router } from '@angular/router';
+import { tap, catchError } from 'rxjs/operators';
+
+
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +34,23 @@ export class AuthService {
       })
     );
   }
+  register(fname: string,
+     lname: string, 
+     email: string, 
+     password: string, 
+     role: string){
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post<User>(this.baseUrl + 'register.php', 
+    { fname, lname, email, password, role }, { headers }).pipe(
+      map((response)=> {
+        // Perform registration logic here, such as creating the user in the database
+        // Return the user object
+        return response;
+      }),
+    );
+  }
+  
+  
 
   public get currentUserValue(): User|null {
     return this.currentUserSubject.value;
