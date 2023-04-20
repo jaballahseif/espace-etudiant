@@ -38,12 +38,17 @@ export class RegisterComponent implements OnInit {
       )
         .pipe(first())
         .subscribe(
-          (data) => {
-            this.router.navigate(['login']);
+          response => {
+            if (response.message === 'success') {
+              alert(response.message);
+              // Registration successful, redirect to home page
+              this.router.navigate(['/login']);
+            } else {
+              // User already registered, redirect to login page
+              alert(response.message);
+            }
           },
-          (error) => {
-            alert(error);
-          } 
+          error => console.error(error)
         );
     } else {
       alert('Please fill out all fields!');
