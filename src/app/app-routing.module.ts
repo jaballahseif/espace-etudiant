@@ -25,6 +25,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     data: { roles: ['admin'] },
     children: [{ path: 'userlist', component: UserlistComponent },
+    
   ]
   },
   { path: 'student', component: StudentComponent, canActivate: [AuthGuard], data: { roles: ['etudiant'] } },

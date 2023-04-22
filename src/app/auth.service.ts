@@ -5,7 +5,9 @@ import { map } from 'rxjs/operators';
 import { User } from './user';
 import { Router } from '@angular/router';
 import { tap, catchError } from 'rxjs/operators';
+import { Notes } from './student/note/note';
 
+import { ActivatedRoute } from '@angular/router';
 
 
 
@@ -15,15 +17,18 @@ import { tap, catchError } from 'rxjs/operators';
 })
 export class AuthService {
   private baseUrl = 'http://localhost/php/';
+  private baseUrl1 = 'http://localhost/php/view-note.php';
+
   private currentUserSubject: BehaviorSubject<User|null>;
   public currentUser: Observable<User|null>;
+  public notes: Object | undefined;
 
-  constructor(private http: HttpClient , private router: Router) {
+  constructor(private http: HttpClient , private router: Router,private route: ActivatedRoute) {
     this.currentUserSubject = new BehaviorSubject<User|null>(JSON.parse(localStorage.getItem('currentUser') || '{}'));
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
-  login(email: string, password: string): Observable<User> {
+login(email: string, password: string): Observable<User> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post<User>(this.baseUrl + 'login.php', { email, password }, { headers }).pipe(
       map(user => {
@@ -31,9 +36,21 @@ export class AuthService {
           localStorage.setItem('currentUser', JSON.stringify(user));
         }
         return user;
+      }),
+      catchError((error) => {
+        console.log('Login error:', error);
+        return throwError(error);
       })
     );
   }
+
+
+ 
+  
+  
+  
+  
+  
   register(fname: string,
      lname: string, 
      email: string, 
@@ -50,7 +67,10 @@ export class AuthService {
     );
   }
   
-  
+  getid(): number {
+    return this.getCurrentUser().id;
+  }
+
    email(): String{
     return this.getCurrentUser().email;
    }
@@ -86,4 +106,8 @@ export class AuthService {
     const currentUser = this.getCurrentUser();
     return currentUser && currentUser.role === 'etudiant';
   }
+}
+
+function subscribe(arg0: (data: any) => void, arg1: (error: any) => void) {
+  throw new Error('Function not implemented.');
 }

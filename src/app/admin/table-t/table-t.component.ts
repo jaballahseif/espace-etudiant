@@ -90,7 +90,6 @@ export class TableTComponent {
 
   getTeachers() {
     this.teacherService.getTeacher().subscribe((data: User[]) => {
-      console.log(data);
       this.teachers = data;
     });
   }

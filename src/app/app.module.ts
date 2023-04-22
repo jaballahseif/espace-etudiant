@@ -29,6 +29,8 @@ import { SnoteComponent } from './snote/snote.component';
 import { SdocumentComponent } from './sdocument/sdocument.component';
 import { TableSComponent } from './admin/table-s/table-s.component';
 import { TableTComponent } from './admin/table-t/table-t.component';
+import { NoteComponent } from './student/note/note.component';
+import { DocumentComponent } from './student/document/document.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +60,8 @@ import { TableTComponent } from './admin/table-t/table-t.component';
     SdocumentComponent,
     TableSComponent,
     TableTComponent,
+    NoteComponent,
+    DocumentComponent,
     
   ],
   imports: [
