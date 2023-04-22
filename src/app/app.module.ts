@@ -18,6 +18,17 @@ import { TeamSectionComponent } from './team-section/team-section.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ContactComponent } from './contact/contact.component';
 import { UserlistComponent } from './admin/userlist/userlist.component';
+import { TDashComponent } from './teacher/t-dash/t-dash.component';
+import { TNoteComponent } from './teacher/t-note/t-note.component';
+import { TDocumentComponent } from './teacher/t-document/t-document.component';
+import { TnoteComponent } from './tnote/tnote.component';
+import { TdocComponent } from './tdoc/tdoc.component';
+import { AstudentComponent } from './astudent/astudent.component';
+import { AteacherComponent } from './ateacher/ateacher.component';
+import { SnoteComponent } from './snote/snote.component';
+import { SdocumentComponent } from './sdocument/sdocument.component';
+import { TableSComponent } from './admin/table-s/table-s.component';
+import { TableTComponent } from './admin/table-t/table-t.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +47,17 @@ import { UserlistComponent } from './admin/userlist/userlist.component';
     TeamSectionComponent,
     ContactComponent,
     UserlistComponent,
+    TDashComponent,
+    TNoteComponent,
+    TDocumentComponent,
+    TnoteComponent,
+    TdocComponent,
+    AstudentComponent,
+    AteacherComponent,
+    SnoteComponent,
+    SdocumentComponent,
+    TableSComponent,
+    TableTComponent,
     
   ],
   imports: [

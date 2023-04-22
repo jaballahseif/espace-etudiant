@@ -1,0 +1,15 @@
+div{
+    font-family: 'Poppins';
+}
+th{
+    background-color: aqua;
+}
+h1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 3rem;
+    margin-top: 20px;
+
+    
+}

@@ -7,14 +7,19 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./student.component.css']
 })
 export class StudentComponent implements OnInit {
-  constructor(private authService: AuthService) { }
+  email: String;
+  constructor(private authService: AuthService) { 
+    this.email = this.authService.email();
+  }
 
   ngOnInit(): void {
   }
+  selectedMenuItem: string = 'dashboard';
+
+
 
   logout(): void {
     this.authService.logout();
   }
-
 
 }

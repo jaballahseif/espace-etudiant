@@ -51,7 +51,12 @@ export class AuthService {
   }
   
   
-
+   email(): String{
+    return this.getCurrentUser().email;
+   }
+   fname(): String{
+    return this.getCurrentUser().fname;
+   }
   public get currentUserValue(): User|null {
     return this.currentUserSubject.value;
   }

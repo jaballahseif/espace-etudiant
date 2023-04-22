@@ -5,5 +5,8 @@ export interface User {
     email: string;
     password: string;
     role: string;
-  }
+    id_enseignant: number; // add this line
+    id_etudiant : number;
+    editing: boolean; // new property
+}
   

@@ -10,7 +10,10 @@ export class AdminComponent implements OnInit {
   selectedMenuItem: string = 'dashboard';
 
 
-  constructor(private authService: AuthService) { }
+  email: String;
+  constructor(private authService: AuthService) { 
+    this.email = this.authService.email();
+  }
 
   ngOnInit(): void {
   }
