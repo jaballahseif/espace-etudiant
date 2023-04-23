@@ -1,1 +1,18 @@
-<p>t-document works!</p>
+<div class="bg-gradient-to-r from-purple-400 to-blue-500 rounded-lg shadow-lg p-6 mx-auto">
+    <form #fileForm enctype="multipart/form-data" (ngSubmit)="onSubmit()" class="flex flex-col items-center justify-center">
+      <div class="form-group text-black">
+        <label for="file" class="text-lg mb-2">Choose file</label>
+        <div class="relative">
+          <input type="file" name="file" id="file" class="sr-only" (change)="onFileSelected($event)">
+          <label for="file" class="py-2 px-4 bg-white rounded-lg shadow-md cursor-pointer hover:bg-gray-200">
+            <span id="file-label">Select a file...</span>
+          </label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary mt-4">Upload</button>
+    </form>
+  
+    <div *ngIf="uploadSuccess" class="text-green-500 mt-4 text-center">File uploaded successfully!</div>
+    <div *ngIf="uploadError" class="text-red-500 mt-4 text-center">Error uploading file. Please try again.</div>
+  </div>
+  
