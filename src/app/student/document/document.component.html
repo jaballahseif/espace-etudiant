@@ -1,1 +1,17 @@
-<p>document works!</p>
+<div class="card-deck">
+  <div class="card" *ngFor="let file of files">
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+      <div class="p-3">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center">
+            <img class="h-8 w-auto mr-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/833px-PDF_file_icon.svg.png" alt="PDF icon">
+            <h5 class="text-lg font-medium">{{ file }}</h5>
+          </div>
+        </div>
+        <div class="text-center">
+          <a class="inline-block bg-blue-500 text-white px-3 py-2 rounded hover:bg-blue-600 transition duration-200" (click)="downloadFile(file)">View</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
