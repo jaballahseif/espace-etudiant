@@ -36,14 +36,6 @@ export class TDocumentComponent {
     formData.append('title', this.title);
 
     // Call the PHP file for inserting data into the database
-    this.http.post<any>('http://localhost/php/add-file.php', formData).subscribe(
-      (response) => {
-        console.log(response);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
 
     // Call the PHP file for uploading files
     this.http.post<any>('http://localhost/php/upload-file.php', formData).subscribe(

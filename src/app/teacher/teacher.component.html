@@ -103,16 +103,24 @@
 <div *ngIf="selectedMenuItem === 'note'">
    <div class="p-5 sm:ml-64">
       <div class="p-5 mt-20">
-         NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOTEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+         <app-t-note></app-t-note>
       </div>
    </div>
 </div>
 <div *ngIf="selectedMenuItem === 'document'">
    <div class="p-5 sm:ml-64">
+      
       <div class="p-5 mt-20">
          <app-t-document></app-t-document>
+         
       </div>
+      
    </div>
+   <div class="ocean">
+      <div class="wave"></div>
+      <div class="wave"></div>
+    </div>
+    
 </div>
 <div *ngIf="selectedMenuItem === 'dashboard'">
    <div class="p-5 sm:ml-64">
@@ -123,7 +131,8 @@
 
    <div class="p-5 sm:ml-64">
       <div class="p-5 mt-18">
-         <app-tdoc (click)="selectedMenuItem = 'document'"></app-tdoc>>
+         <app-tdoc (click)="selectedMenuItem = 'document'"></app-tdoc>
+         
       </div>
    </div>
 
