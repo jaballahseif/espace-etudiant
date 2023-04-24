@@ -43,6 +43,7 @@ export class TDocumentComponent {
         console.log(response);
         this.uploadSuccess = true;
         this.uploadError = false;
+
       },
       (error) => {
         console.log(error);
