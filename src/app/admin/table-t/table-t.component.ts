@@ -16,6 +16,7 @@ export class TableTComponent {
   teachers: User[] = [];
   showModal = false;
   registerForm: FormGroup;
+  searchText: any;
 
   constructor(private teacherService: TeacherService,
     private router : Router,
@@ -98,6 +99,15 @@ export class TableTComponent {
       this.teacherService.deleteTeacher(id).subscribe((data: any) => {
         this.teachers = this.teachers.filter((t: User) => t.id_enseignant !== id);
       });
+    }
+  }
+  search() {
+    if (this.searchText) {
+      this.teacherService.searchTeachers(this.searchText).subscribe((data: User[]) => {
+        this.teachers = data;
+      });
+    } else {
+      this.getTeachers();
     }
   }
 }
