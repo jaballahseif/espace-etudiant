@@ -16,6 +16,8 @@ export class TableSComponent {
   students: User[] = [];
   showModal = false;
   registerForm: FormGroup;
+  searchText: any;
+
 
   constructor(private studentService: StudentService,
     private router : Router,
@@ -98,6 +100,15 @@ export class TableSComponent {
         title: 'Oops...',
         text: 'Please fill out all the fields!',
       });
+    }
+  }
+  search() {
+    if (this.searchText) {
+      this.studentService.searchStudents(this.searchText).subscribe((data: User[]) => {
+        this.students = data;
+      });
+    } else {
+      this.getStudents();
     }
   }
         

@@ -7,6 +7,7 @@ import { catchError, first } from 'rxjs/operators';
 import { of, throwError } from 'rxjs';
 import { NoteService } from '../note.service';
 import { User } from 'src/app/user';
+import { StudentService } from 'src/app/admin/student.service';
 
 
 @Component({
@@ -21,6 +22,8 @@ export class TNoteComponent implements OnInit {
   addnote: FormGroup;
   currentid: string= '';
   selectedStudentId: number= 0;
+  searchText: any;
+
 
 
 
@@ -28,7 +31,8 @@ export class TNoteComponent implements OnInit {
     private http: HttpClient,
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private noteService: NoteService
+    private noteService: NoteService,
+    private studentService: StudentService,
   ) {
     this.addnote = this.formBuilder.group({
       matiere: ['', [Validators.required, Validators.minLength(1)]],
@@ -80,4 +84,12 @@ export class TNoteComponent implements OnInit {
     });
   }
   }  
+  search() {
+    if (this.searchText) {
+      this.studentService.searchStudents(this.searchText).subscribe((data: User[]) => {
+        this.students = data;
+      });
+    } else {
+this.studentService.getStudent();  }
+  }
 } 

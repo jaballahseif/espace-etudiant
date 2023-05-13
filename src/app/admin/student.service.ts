@@ -9,6 +9,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class StudentService {
   baseUrl: string = 'http://localhost/php/'
   baseUrl2: string = 'http://localhost/php/student-list.php';
+  baseurl2: string = 'http://localhost/php/searchs.php';
+
 
   constructor(private httpClient: HttpClient) { }
 
@@ -36,6 +38,9 @@ export class StudentService {
         return response;
       })
     );
+  }
+  searchStudents(searchText: string): Observable<User[]> {
+    return this.httpClient.get<User[]>(`${this.baseurl2}?searchTerm=${searchText}`);
   }
 
 }

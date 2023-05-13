@@ -10,7 +10,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class TeacherService {
   baseUrl: string = 'http://localhost/php/'
   baseUrl1: string = 'http://localhost/php/teacher-list.php';
-  baseurl2: string = 'http://localhost/php/search.php';
+  baseurl2: string = 'http://localhost/php/searcht.php';
 
   constructor(private httpClient: HttpClient) { }
   getTeacher(): Observable<User[]> {

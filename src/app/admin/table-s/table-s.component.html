@@ -3,6 +3,11 @@
   <div class="container mx-auto">
     <h1 class="text-xl font-bold mb-2">Student List</h1>
     <br>
+    <div class="flex justify-center mb-4">
+      <input [(ngModel)]="searchText" type="text" class="form-input rounded-l-lg w-64" placeholder="Search by student name...">
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-r-lg" (click)="search()">Search</button>
+          <br>
+    </div>
     <table class="table-auto w-full border-collapse border border-gray-400">
       <thead>
         <tr class="bg-gray-200">
